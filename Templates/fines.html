@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Fines</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .delete {
+            background-color: #f44336;
+        }
+
+        .delete:hover {
+            background-color: #e53935;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="main-content">
+        <h2>Your Fines</h2>
+        <p>You currently have the following fines:</p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Fine ID</th>
+                    <th>Book Title</th>
+                    <th>Amount</th>
+                    <th>Status</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1</td>
+                    <td>Harry Potter</td>
+                    <td>$5</td>
+                    <td>Unpaid</td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>Lord of the Rings</td>
+                    <td>$2</td>
+                    <td>Paid</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

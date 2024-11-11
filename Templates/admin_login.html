@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login Page</title>
+  <style>
+    /* Basic reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, sans-serif;
+    }
+
+    /* Center the login form on the page */
+    body {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      background-color: #f4f4f9;
+    }
+
+    /* Form container styling */
+    .login-container {
+      width: 300px;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: #ffffff;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.6);
+    }
+
+    /* Title styling */
+    h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      color: #333;
+    }
+
+    /* Input styling */
+    .login-container input[type="text"],
+    .login-container input[type="password"] {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: 1px solid #ddd;
+      border-radius: 5px;
+    }
+
+    /* Button styling */
+    .login-container button {
+      width: 100%;
+      padding: 10px;
+      background-color: #007bff;
+      color: #ffffff;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .login-container button:hover {
+      background-color: #0056b3;
+    }
+
+    /* Optional: add subtle link styling */
+    .login-container p {
+      text-align: center;
+      margin-top: 15px;
+      color: #666;
+    }
+    
+    .login-container p a {
+      color: #007bff;
+      text-decoration: none;
+    }
+
+    .login-container p a:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+<body>
+  <div class="login-container">
+    <h2>Admin Login</h2>
+    <form method="POST" action="">
+      {{ form.hidden_tag() }} 
+      <input type="text" name="username" placeholder="Username" value="{{ form.username.data or '' }}" required>
+
+      <input type="password" name="password" placeholder="Password" value="{{ form.password.data or '' }}" required>
+
+      <button type="submit">{{ form.submit.label }}</button>
+    </form>
+    <p>Are you a user? <a href="{{ url_for('Userlogin') }}">User Login</a></p>
+    
+  </div>
+</body>
+</html>

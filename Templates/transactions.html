@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transactions - Admin Dashboard</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        table, th, td {
+            border: 1px solid #ddd;
+        }
+
+        th, td {
+            padding: 10px;
+            text-align: left;
+        }
+
+        th {
+            background-color: #f4f4f4;
+        }
+
+        .btn {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            text-decoration: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+
+        .btn:hover {
+            background-color: #45a049;
+        }
+
+        .delete {
+            background-color: #f44336;
+        }
+
+        .delete:hover {
+            background-color: #e53935;
+        }
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Transaction Management</h1>
+
+        <!-- Table to display transactions -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Transaction ID</th>
+                    <th>Book ID</th>
+                    <th>User ID</th>
+                    <th>Transaction Type</th>
+                    <th>Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through the list of transactions -->
+                {% for transaction in transactions %}
+                <tr>
+                    <td>{{ transaction.transaction_id }}</td>
+                    <td>{{ transaction.book_id }}</td>
+                    <td>{{ transaction.user_id }}</td>
+                    <td>{{ transaction.transaction_type }}</td>
+                    <td>{{ transaction.date }}</td>
+                    <td>
+                        <!-- Delete button for transactions -->
+                        <a href="/delete_transaction/{{ transaction.transaction_id }}" class="btn delete">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

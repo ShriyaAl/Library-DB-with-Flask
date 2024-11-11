@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Borrowing Records - Admin Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Borrowing Records</h1>
+
+        <!-- Table to display borrowing records -->
+        <table>
+            <thead>
+                <tr>
+                    <th>Record ID</th>
+                    <th>Book ID</th>
+                    <th>User ID</th>
+                    <th>Borrow Date</th>
+                    <th>Return Date</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Loop through the list of borrowing records -->
+                {% for record in borrowing_records %}
+                <tr>
+                    <td>{{ record.record_id }}</td>
+                    <td>{{ record.book_id }}</td>
+                    <td>{{ record.user_id }}</td>
+                    <td>{{ record.borrow_date }}</td>
+                    <td>{{ record.return_date }}</td>
+                    <td>
+                        <!-- Delete button for borrowing records -->
+                        <a href="/delete_borrowing_record/{{ record.record_id }}" class="btn delete">Delete</a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Catalog - Library Management System</title>
+    <link rel="stylesheet" href="catalog.css">
+</head>
+<body>
+    <div class="container">
+        <div class="sidebar">
+            <h2>Admin Dashboard</h2>
+            <ul>
+                <li><a href="admin_dashboard.html">Dashboard</a></li>
+                <li><a href="suppliers_publishers.html">Suppliers/Publishers</a></li>
+                <li><a href="user_management.html">User Management</a></li>
+                <li><a href="transactions.html">Transactions</a></li>
+                <li><a href="borrowing_records.html">Borrowing Records</a></li>
+            </ul>
+            <button class="logout-btn">Logout</button>
+        </div>
+
+        <div class="main-content">
+            <div class="page-header">
+                <h1>Book Catalog</h1>
+                <div class="actions">
+                    <button class="btn add-book-btn" onclick="window.location.href='add_book.html'">Add New Book</button>
+                    <input type="text" id="search-bar" placeholder="Search by title, author, or genre" oninput="searchBooks()">
+                </div>
+            </div>
+
+            <div class="book-list">
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Title</th>
+                            <th>Author</th>
+                            <th>Genre</th>
+                            <th>Publisher</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody id="book-table-body">
+                        <!-- Example row, dynamic data should be populated here -->
+                        <tr>
+                            <td>The Great Gatsby</td>
+                            <td>F. Scott Fitzgerald</td>
+                            <td>Fiction</td>
+                            <td>Scribner</td>
+                            <td>
+                                <button class="btn edit-btn" onclick="window.location.href='edit_book.html'">Edit</button>
+                                <button class="btn delete-btn" onclick="deleteBook()">Delete</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1984</td>
+                            <td>George Orwell</td>
+                            <td>Dystopian</td>
+                            <td>Secker & Warburg</td>
+                            <td>
+                                <button class="btn edit-btn" onclick="window.location.href='edit_book.html'">Edit</button>
+                                <button class="btn delete-btn" onclick="deleteBook()">Delete</button>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

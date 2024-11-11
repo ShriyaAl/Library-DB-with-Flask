@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+</head>
+
+<body>
+    <h1>Register Page</h1>
+
+    <form method="POST" action="">
+        {{ form.hidden_tag() }}
+        
+        <!-- Username input -->
+        <div>
+            {{ form.username.label }}<br>
+            {{ form.username(size=32) }}
+            {% if form.username.errors %}
+                <ul>
+                    {% for error in form.username.errors %}
+                        <li style="color: red;">{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <!-- Password input -->
+        <div>
+            {{ form.password.label }}<br>
+            {{ form.password(size=32) }}
+            {% if form.password.errors %}
+                <ul>
+                    {% for error in form.password.errors %}
+                        <li style="color: red;">{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <!-- Role selection -->
+        <div>
+            {{ form.role.label }}<br>
+            {{ form.role }}
+            {% if form.role.errors %}
+                <ul>
+                    {% for error in form.role.errors %}
+                        <li style="color: red;">{{ error }}</li>
+                    {% endfor %}
+                </ul>
+            {% endif %}
+        </div>
+
+        <!-- Submit button -->
+        <div>
+            {{ form.submit }}
+        </div>
+    </form>
+
+    <a href="{{ url_for('Userlogin') }}">Already have an account? Log In</a>
+</body>
+
+</html>

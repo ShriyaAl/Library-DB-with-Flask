@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit User</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Edit User</h1>
+
+        <!-- Form to edit user details -->
+        <form action="/edit_user/{{ user.id }}" method="POST">
+            <label for="name">Name</label>
+            <input type="text" id="name" name="name" value="{{ user.name }}" required>
+
+            <label for="email">Email</label>
+            <input type="email" id="email" name="email" value="{{ user.email }}" required>
+
+            <label for="role">Role</label>
+            <select id="role" name="role" required>
+                <option value="Admin" {% if user.role == 'Admin' %}selected{% endif %}>Admin</option>
+                <option value="User" {% if user.role == 'User' %}selected{% endif %}>User</option>
+            </select>
+
+            <label for="password">Password (Leave blank to keep current password)</label>
+            <input type="password" id="password" name="password">
+
+            <button type="submit" class="btn">Update User</button>
+        </form>
+
+        <!-- Back to User Management -->
+        <a href="/user_management" class="btn">Back to User List</a>
+    </div>
+</body>
+</html>
